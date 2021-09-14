@@ -1,0 +1,81 @@
+{
+  "channles": [
+    {
+      "id": 1
+    },
+    {
+      "name": "NIckelodeon",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+      "id": 2
+    },
+    {
+      "name": "NIckelodeon",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+      "id": 3
+    },
+    {
+      "name": "Ren Tv",
+      "image_url": "https://fast.ntvplus.tv/files/image/10/86/16/-channel!6x9.png",
+      "channles": [
+        {
+          "name": "NIckelodeon",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+          "id": 1
+        },
+        {
+          "name": "NIckelodeon",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+          "id": 2
+        },
+        {
+          "name": "NIckelodeon",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+          "id": 3
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "123",
+      "image_url": "123",
+      "channles": [
+        {
+          "id": 1
+        },
+        {
+          "name": "NIckelodeon",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+          "id": 2
+        },
+        {
+          "name": "NIckelodeon",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+          "id": 3
+        },
+        {
+          "name": "Ren Tv",
+          "image_url": "https://fast.ntvplus.tv/files/image/10/86/16/-channel!6x9.png",
+          "channles": [
+            {
+              "name": "NIckelodeon",
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+              "id": 1
+            },
+            {
+              "name": "NIckelodeon",
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+              "id": 2
+            },
+            {
+              "name": "NIckelodeon",
+              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/1196px-Nickelodeon_2009_logo.svg.png",
+              "id": 3
+            }
+          ],
+          "id": 4
+        }
+      ],
+      "id": 5
+    }
+  ]
+}
