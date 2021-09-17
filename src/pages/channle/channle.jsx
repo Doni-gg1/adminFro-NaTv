@@ -12,6 +12,9 @@ class Channle extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    
+  }
+  componentDidMount(){
     fetch("http://localhost:3001/channles")
     .then(response => response.json())
     .then(data => this.setState({channles: data}))
@@ -37,7 +40,7 @@ class Channle extends React.Component {
     fetch("http://localhost:3001/channles", option)
     .then(response => response.json);
     
-    
+    this.componentDidMount();
   }
   render() {
     return (

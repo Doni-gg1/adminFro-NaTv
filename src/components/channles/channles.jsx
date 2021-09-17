@@ -5,14 +5,17 @@ class Channles extends React.Component {
     super(props);
     
     this.state = {
-      editId: 0,
-      id2: 0
+      id: '',
+      channlesCount: {}
     }
     this.id = 1;
 
     this.handleClick = this.handleDelClick.bind(this);
     this.handleEditClick = this.handleEditClick.bind(this);
     this.handleSaveEdit = this.handleSaveEdit.bind(this);
+  }
+  componentDidMount(){
+    this.setState({channlesCount: this.props.data})
   }
   handleDelClick(event) {
     let id = event.target.dataset.id;
@@ -21,12 +24,14 @@ class Channles extends React.Component {
       method: "delete",
     };
     fetch(`http://localhost:3001/channles/${id}`, option);
+    window.location.reload()
   }
   handleEditClick(event){
-    let id = event.target.dataset.id
-    this.id = id;
+    // this.setState({id: })
+    let id = event.target.dataset.idEdit;
     
     const url = `http://localhost:3001/channles/${id}`;
+    console.log(url)
     
 
     fetch(url)
@@ -35,42 +40,47 @@ class Channles extends React.Component {
       
       document.querySelector("#name").value = data.name;
       document.querySelector('#image_url').value = data.image_url;
+      // this.setState({url: url})
     });
   }
-  handleSaveEdit(event){
-    // let id = event.target[this.props.data.id];
-    // let editId = e.target.dataset.id;
-    let editURL = `http://localhost:3001/channles/${this.id}`;
+  handleSaveEdit(e){
+    let id = e.target.id;
+    console.log(`Это id при save: ${id}`)
     let elements = document.querySelectorAll(".edit-form input");
     let data = {};
     elements.forEach(item => {
       data[item.name] = item.value;
     })
     // Нужно подобрать id. На данный момент во всех выводит только 1
-    fetch(editURL, {method: "put", headers: {
+    let option = {
+      method: "patch",
+      mode: 'cors',
+       headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)})
-    .then(response => console.log(response.json()))
-    console.log(this.id);
+    body: JSON.stringify(data)}
+    // fetch(editURL, option)
+    // .then(response => console.log(response.json()))
+    // .then(data => console.log(data))
   }
   render() {
     
     return (
       <>
+      
         <tbody>
           <tr>
-            <td>{this.props.data.id}</td>
+            <td>{this.state.channlesCount.id}</td>
             <td>
-              <img width="50px" src={this.props.data.image_url} />
+              <img width="50px" src={this.state.channlesCount.image_url} />
             </td>
-            <td>{this.props.data.name}</td>
+            <td>{this.state.channlesCount.name}</td>
             <td>
               <button
                 style={{ marginRight: "5px" }}
                 className="btn btn-danger"
                 name="delete"
-                data-id={this.props.data.id}
+                data-id={this.state.channlesCount.id}
                 onClick={this.handleDelClick}
               >
                 Удалить
@@ -79,7 +89,8 @@ class Channles extends React.Component {
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 className="btn btn-primary"
-                data-id={this.props.data.id}
+                data-id-edit={this.state.channlesCount.id}
+                id={this.state.channlesCount.id}
                 onClick={this.handleEditClick}
               >
                 Редактировать
